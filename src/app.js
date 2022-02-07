@@ -25,6 +25,13 @@ app.use(indexRoute)
 //call base end point
 app.get('/bot', (req, res) => {
     res.status(200).send({
+        'health-check': 'BOT',
+        'message': 'Slackbot api is up and running'
+    })
+})
+
+app.get('/', (req, res) => {
+    res.status(200).send({
         'health-check': 'Ok',
         'repo': 'https://github.com/anjorlar/SlackBotAPI.git',
         'message': 'base endpoint for Slackbot api is up and running'
